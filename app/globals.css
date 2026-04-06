@@ -3,25 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Hide scrollbar for snap-scroll containers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Swiper custom dot styles */
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(217, 217, 217, 0.5);
+  opacity: 1;
+  border-radius: 33px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  width: 25px;
+  background: #d9d9d9;
 }
