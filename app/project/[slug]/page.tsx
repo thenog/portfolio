@@ -9,6 +9,7 @@ import BackButton from "@/components/BackButton";
 import CardSlider from "@/components/CardSlider";
 import ImageCarousel from "@/components/ImageCarousel";
 import ImageGrid from "@/components/ImageGrid";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ProjectPage({
   params,
@@ -25,15 +26,20 @@ export default function ProjectPage({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className="min-h-screen bg-black pb-24"
     >
       <BackButton />
 
       {/* Hero Image */}
-      <div className="relative w-full h-[336px] md:h-[500px]">
+      <motion.div
+        initial={{ scale: 1.05, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="relative w-full h-[336px] md:h-[500px] overflow-hidden"
+      >
         <Image
           src={project.heroImage}
           alt={project.title}
@@ -42,19 +48,23 @@ export default function ProjectPage({
           priority
           sizes="100vw"
         />
-      </div>
+      </motion.div>
 
       {/* Title + Description */}
       <div className="px-8 mt-8 flex flex-col gap-4 max-w-[700px]">
-        <h1
-          className="font-display font-bold text-4xl md:text-5xl tracking-tighter"
-          style={{ fontVariationSettings: "'opsz' 14" }}
-        >
-          {project.title}
-        </h1>
-        <p className="font-body text-base leading-[1.2] text-white/90">
-          {project.description}
-        </p>
+        <ScrollReveal delay={0.15}>
+          <h1
+            className="font-display font-bold text-4xl md:text-5xl tracking-tighter"
+            style={{ fontVariationSettings: "'opsz' 14" }}
+          >
+            {project.title}
+          </h1>
+        </ScrollReveal>
+        <ScrollReveal delay={0.25}>
+          <p className="font-body text-base leading-[1.2] text-white/90">
+            {project.description}
+          </p>
+        </ScrollReveal>
       </div>
 
       {/* Slider Sections */}
@@ -65,29 +75,31 @@ export default function ProjectPage({
       </div>
 
       {/* Long Description */}
-      <div className="px-8 mt-12 max-w-[700px]">
+      <ScrollReveal className="px-8 mt-12 max-w-[700px]">
         <p className="font-body text-base leading-relaxed text-white/90">
           {project.longDescription}
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* Image Carousel */}
-      <div className="mt-12">
+      <ScrollReveal className="mt-12">
         <ImageCarousel images={project.imageCarousel} />
-      </div>
+      </ScrollReveal>
 
       {/* Block Quote */}
-      <div className="px-8 mt-16 mb-16 max-w-[500px] mx-auto text-center">
+      <ScrollReveal className="px-8 mt-16 mb-16 max-w-[500px] mx-auto text-center">
         <p
           className="font-display font-bold text-2xl leading-relaxed tracking-tight"
           style={{ fontVariationSettings: "'opsz' 14" }}
         >
           {project.blockQuote}
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* Image Grid */}
-      <ImageGrid images={project.imageGrid} />
+      <ScrollReveal>
+        <ImageGrid images={project.imageGrid} />
+      </ScrollReveal>
 
       {/* More Projects */}
       <div className="mt-16">
@@ -100,13 +112,14 @@ export default function ProjectPage({
           }))}
           compact
         />
-        {/* Make "more projects" cards linkable */}
-        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-8 mt-4">
-          {otherProjects.map((p) => (
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide mt-2">
+          {otherProjects.map((p, i) => (
             <Link
               key={p.id}
               href={`/project/${p.slug}`}
-              className="flex-shrink-0 snap-start text-xs font-bold font-body text-white/50 hover:text-white transition-colors w-[310px] md:w-[450px]"
+              className={`flex-shrink-0 snap-start text-xs font-bold font-body text-white/50 hover:text-white transition-colors w-[310px] md:w-[450px] ${
+                i === 0 ? "ml-8" : ""
+              } ${i === otherProjects.length - 1 ? "mr-8" : ""}`}
             >
               View project &rarr;
             </Link>

@@ -1,4 +1,8 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
 import type { SliderCard } from "@/data/projects";
 
 interface CardSliderProps {
@@ -12,19 +16,33 @@ export default function CardSlider({
   cards,
   compact = false,
 }: CardSliderProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
+
   return (
-    <div className="flex flex-col gap-4">
+    <motion.div
+      ref={ref}
+      className="flex flex-col gap-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
       <h2
         className="font-display font-bold text-2xl md:text-4xl tracking-tight px-8"
         style={{ fontVariationSettings: "'opsz' 14" }}
       >
         {title}
       </h2>
-      <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-8">
+      <div
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+        style={{ scrollPaddingInlineStart: "32px" }}
+      >
         {cards.map((card, i) => (
           <div
             key={i}
-            className="flex-shrink-0 snap-start flex flex-col gap-4 w-[310px] md:w-[450px]"
+            className={`flex-shrink-0 snap-start flex flex-col gap-4 w-[310px] md:w-[450px] ${
+              i === 0 ? "ml-8" : ""
+            } ${i === cards.length - 1 ? "mr-8" : ""}`}
           >
             <div
               className={`relative w-full rounded-2xl overflow-hidden ${
@@ -55,6 +73,6 @@ export default function CardSlider({
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

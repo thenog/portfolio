@@ -196,9 +196,9 @@ export const projects: Project[] = [
     description:
       "Street art meets digital — a platform celebrating urban creativity.",
     backgroundImage:
-      "https://images.unsplash.com/photo-1561059488-916d69792237?w=1400&q=80",
+      "https://images.unsplash.com/photo-1569017388730-020b5f80a004?w=1400&q=80",
     heroImage:
-      "https://images.unsplash.com/photo-1561059488-916d69792237?w=1400&q=80",
+      "https://images.unsplash.com/photo-1569017388730-020b5f80a004?w=1400&q=80",
     longDescription:
       "Urban Canvas is a digital platform that documents and celebrates street art from cities around the world. The project required a bold visual identity that respects the raw energy of street art while creating an accessible digital experience. We built an interactive map, artist profiles, and a curated gallery system. The platform connects artists with property owners and brands, creating new opportunities for public art commissions while preserving the grassroots spirit of the movement.",
     sliderSections: [
@@ -233,12 +233,12 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=800&q=80",
       "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80",
       "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&q=80",
-      "https://images.unsplash.com/photo-1561059488-916d69792237?w=800&q=80",
+      "https://images.unsplash.com/photo-1569017388730-020b5f80a004?w=800&q=80",
     ],
     blockQuote:
       "The city is the gallery. Every wall is an invitation. Urban Canvas makes the invisible visible.",
     imageGrid: [
-      "https://images.unsplash.com/photo-1561059488-916d69792237?w=600&q=80",
+      "https://images.unsplash.com/photo-1569017388730-020b5f80a004?w=600&q=80",
       "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=600&q=80",
       "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&q=80",
       "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600&q=80",
