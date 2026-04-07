@@ -26,7 +26,7 @@ export default function NavBar() {
     <>
       {/* Mobile Bottom Nav */}
       <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 md:hidden">
-        <div className="flex items-center gap-4 px-9 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+        <div className="flex items-center gap-4 px-9 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] will-change-transform">
           <LayoutGroup id="mobile-nav">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -38,6 +38,7 @@ export default function NavBar() {
                   whileTap={{ scale: 0.85 }}
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
                   className="relative flex flex-col items-center justify-center min-w-[50px]"
+                  style={{ touchAction: "manipulation" }}
                 >
                   {active && (
                     <motion.div
@@ -65,7 +66,7 @@ export default function NavBar() {
 
       {/* Desktop Top Nav */}
       <nav className="fixed top-[43px] left-1/2 -translate-x-1/2 z-50 hidden md:block">
-        <div className="flex items-center justify-between px-9 py-2 rounded-full bg-black/40 backdrop-blur-md min-w-[644px] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+        <div className="flex items-center justify-between px-9 py-2 rounded-full bg-black/40 backdrop-blur-md min-w-[644px] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] will-change-transform">
           <Link
             href="/"
             className="font-display font-bold text-2xl tracking-tight whitespace-nowrap"
@@ -83,6 +84,7 @@ export default function NavBar() {
                     whileTap={{ scale: 0.88 }}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     className="relative min-w-[50px] text-center text-xs font-bold font-body px-3.5 py-1"
+                    style={{ touchAction: "manipulation" }}
                   >
                     {active && (
                       <motion.div
