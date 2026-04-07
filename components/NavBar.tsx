@@ -23,7 +23,7 @@ export default function NavBar() {
     <>
       {/* Mobile Bottom Nav */}
       <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 md:hidden">
-        <div className="flex items-center gap-4 px-9 py-2 rounded-full bg-black/40 backdrop-blur-md">
+        <div className="flex items-center gap-4 px-9 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.href);
@@ -45,7 +45,7 @@ export default function NavBar() {
 
       {/* Desktop Top Nav */}
       <nav className="fixed top-[43px] left-1/2 -translate-x-1/2 z-50 hidden md:block">
-        <div className="flex items-center justify-between px-9 py-2 rounded-full bg-black/40 backdrop-blur-md min-w-[644px]">
+        <div className="flex items-center justify-between px-9 py-2 rounded-full bg-black/40 backdrop-blur-md min-w-[644px] border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
           <Link
             href="/"
             className="font-display font-bold text-2xl tracking-tight whitespace-nowrap"

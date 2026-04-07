@@ -2,6 +2,7 @@ export interface SliderCard {
   image: string;
   title: string;
   description: string;
+  href?: string;
 }
 
 export interface SliderSection {

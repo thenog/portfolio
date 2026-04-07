@@ -2,7 +2,6 @@
 
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { getProjectBySlug, getOtherProjects } from "@/data/projects";
 import BackButton from "@/components/BackButton";
@@ -108,23 +107,10 @@ export default function ProjectPage({
           cards={otherProjects.map((p) => ({
             image: p.backgroundImage,
             title: p.title,
-            description: "",
+            description: p.description,
+            href: `/project/${p.slug}`,
           }))}
-          compact
         />
-        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide mt-2">
-          {otherProjects.map((p, i) => (
-            <Link
-              key={p.id}
-              href={`/project/${p.slug}`}
-              className={`flex-shrink-0 snap-start text-xs font-bold font-body text-white/50 hover:text-white transition-colors w-[310px] md:w-[450px] ${
-                i === 0 ? "ml-8" : ""
-              } ${i === otherProjects.length - 1 ? "mr-8" : ""}`}
-            >
-              View project &rarr;
-            </Link>
-          ))}
-        </div>
       </div>
     </motion.div>
   );

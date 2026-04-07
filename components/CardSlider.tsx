@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import type { SliderCard } from "@/data/projects";
+import GlassButton from "./GlassButton";
 
 interface CardSliderProps {
   title: string;
@@ -57,17 +58,22 @@ export default function CardSlider({
                 sizes="(max-width: 768px) 310px, 450px"
               />
             </div>
-            <div className="flex flex-col gap-1">
-              <h3
-                className="font-display font-bold text-2xl tracking-tight"
-                style={{ fontVariationSettings: "'opsz' 14" }}
-              >
-                {card.title}
-              </h3>
-              {!compact && card.description && (
-                <p className="font-body text-base leading-relaxed text-white/80">
-                  {card.description}
-                </p>
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-1">
+                <h3
+                  className="font-display font-bold text-2xl tracking-tight"
+                  style={{ fontVariationSettings: "'opsz' 14" }}
+                >
+                  {card.title}
+                </h3>
+                {(card.href ? card.description : (!compact && card.description)) && (
+                  <p className="font-body text-base leading-relaxed text-white/80">
+                    {card.description}
+                  </p>
+                )}
+              </div>
+              {card.href && (
+                <GlassButton href={card.href}>View project</GlassButton>
               )}
             </div>
           </div>
