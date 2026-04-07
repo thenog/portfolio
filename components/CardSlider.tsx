@@ -73,7 +73,9 @@ export default function CardSlider({
                 )}
               </div>
               {card.href && (
-                <GlassButton href={card.href}>View project</GlassButton>
+                <div className="self-start">
+                  <GlassButton href={card.href}>View project</GlassButton>
+                </div>
               )}
             </div>
           </div>
