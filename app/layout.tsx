@@ -3,6 +3,7 @@ import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import PageTransition from "@/components/PageTransition";
+import MotionProvider from "@/components/MotionProvider";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -31,8 +32,10 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${inter.variable} font-body antialiased bg-black text-white`}
       >
-        <PageTransition>{children}</PageTransition>
-        <NavBar />
+        <MotionProvider>
+          <PageTransition>{children}</PageTransition>
+          <NavBar />
+        </MotionProvider>
       </body>
     </html>
   );

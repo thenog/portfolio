@@ -21,7 +21,7 @@ export default function HomePage() {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+              transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
             },
           }}
           className="font-display font-bold text-[clamp(3rem,10vw,7rem)] tracking-tighter leading-none"
@@ -36,7 +36,7 @@ export default function HomePage() {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+              transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
             },
           }}
           className="font-body text-base md:text-2xl leading-[1.2] text-white/70"
@@ -51,7 +51,7 @@ export default function HomePage() {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+              transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
             },
           }}
         >

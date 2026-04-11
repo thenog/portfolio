@@ -26,7 +26,7 @@ export default function CardSlider({
       className="flex flex-col gap-4"
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       <h2
         className="font-display font-bold text-2xl md:text-4xl tracking-tight px-8"

@@ -24,19 +24,14 @@ export default function ProjectPage({
   const otherProjects = getOtherProjects(project.slug);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className="min-h-screen bg-black pb-24"
-    >
+    <div className="min-h-screen bg-black pb-24">
       <BackButton />
 
       {/* Hero Image */}
       <motion.div
-        initial={{ scale: 1.05, opacity: 0 }}
+        initial={{ scale: 1.03, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="relative w-full h-[336px] md:h-[500px] overflow-hidden"
       >
         <Image
@@ -112,6 +107,6 @@ export default function ProjectPage({
           }))}
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
