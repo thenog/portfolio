@@ -9,7 +9,7 @@ export default function ContactPage() {
         className="flex flex-col gap-4 max-w-[700px]"
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
         <h1
           className="font-display font-bold text-[clamp(3rem,10vw,7rem)] tracking-tighter leading-none"
